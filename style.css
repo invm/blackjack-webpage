@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.6;
+}
+h1 {
+  color: black;
+}
+
+.cards {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 50%;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.current.game {
+  opacity: 1;
+  transition: all 0.7s ease-in-out 0.3s;
+  left: 10%;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  height: 90vh;
+  width: 80vw;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  border-radius: 32px;
+}
+
+.slide:first-child {
+  background: url(./images/image1.webp) no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+  background: url(./images/image2.webp) no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+  background: url(./images/image3.webp) no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+  background: url(./images/image4.webp) no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+  background: url(./images/image5.webp) no-repeat center center/cover;
+}
+
+.slide:nth-child(6) {
+  background: url(./images/image6.webp) no-repeat center center/cover;
+}
+
+img.card {
+  width: 10vw;
+  height: 26vh;
+  border-radius: 7%;
+  padding: 1px;
+  align-self: flex-end;
+  position: relative;
+  opacity: 1;
+  animation: fadeInFromNone 1s ease-in-out;
+}
+
+button {
+  background: #1aab8a;
+  color: rgb(0, 0, 0);
+  border: none;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  border-radius: 3%;
+}
+button:hover {
+  background: #fff;
+  color: #1aab8a;
+}
+button:before,
+button:after {
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #1aab8a;
+  transition: 400ms ease all;
+}
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button#play {
+  position: absolute;
+  top: 60vh;
+  left: 44vw;
+  width: 7%;
+  padding: 2px;
+  margin: 5px;
+  text-align: center;
+  align-self: center;
+  z-index: 1;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
